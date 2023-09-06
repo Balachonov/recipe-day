@@ -1,12 +1,12 @@
-package balachonov.servises;
+package balachonov.recipeday.servises;
 
-import balachonov.entities.Recipe;
+import balachonov.recipeday.entities.Recipe;
 import org.springframework.stereotype.Service;
 
 import java.time.DayOfWeek;
 import java.util.Map;
 
-import static balachonov.utils.Constants.*;
+import static balachonov.recipeday.utils.Constants.*;
 
 @Service
 public class RecipeService {

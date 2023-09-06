@@ -1,22 +1,23 @@
-package balachonov.controllers;
+package balachonov.recipeday.controllers;
 
-import balachonov.entities.Recipe;
-import balachonov.servises.RecipeService;
+import balachonov.recipeday.entities.Recipe;
+import balachonov.recipeday.servises.RecipeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.Map;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class RecipeController {
 
     private final RecipeService RECIPE_SERVICE;
-    @GetMapping("/recipe")
-    public Recipe getRecipe(@RequestParam DayOfWeek day){
+    @GetMapping()
+    public Recipe getRecipe(){
         Map<DayOfWeek, Recipe> recipes = RECIPE_SERVICE.getRecipes();
-        return recipes.get(day);
+        return recipes.get(LocalDate.now().getDayOfWeek());
     }
 }

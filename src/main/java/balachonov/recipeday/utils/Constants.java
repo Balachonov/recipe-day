@@ -1,5 +1,8 @@
-package balachonov.utils;
+package balachonov.recipeday.utils;
 
+import lombok.experimental.UtilityClass;
+
+@UtilityClass
 public final class Constants {
 
     public static final String MONDAY_RECIPE = """
@@ -175,7 +178,4 @@ public final class Constants {
     public static final String EASY = "Easy";
     public static final String MEDIUM = "Medium";
     public static final String DIFFICULT = "Difficult";
-
-    private Constants() {
-    }
 }
