@@ -14,10 +14,10 @@ import java.util.Map;
 @RequestMapping("/")
 public class RecipeController {
 
-    private final RecipeService RECIPE_SERVICE;
-    @GetMapping()
+    private final RecipeService recipeService;
+    @GetMapping
     public Recipe getRecipe(){
-        Map<DayOfWeek, Recipe> recipes = RECIPE_SERVICE.getRecipes();
+        Map<DayOfWeek, Recipe> recipes = recipeService.getRecipes();
         return recipes.get(LocalDate.now().getDayOfWeek());
     }
 }
